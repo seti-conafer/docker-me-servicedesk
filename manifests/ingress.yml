@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "kubernetes-d2df"
+    labels:
+        app: "kubernetes-d2df"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: kubernetesb9d2-kubernetes-d2df.cd2bf301a45749a38d7c.brazilsouth.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "kubernetes-d2df"
+                servicePort: 8080
