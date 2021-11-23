@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubernetes-d2df"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubernetes-d2df"
+  template:
+    metadata:
+      labels:
+        app: "kubernetes-d2df"
+    spec:
+      containers:
+        - name: "kubernetes-d2df"
+          image: "manageenginesdp.azurecr.io/kubernetes"
+          ports:
+          - containerPort: 8080
